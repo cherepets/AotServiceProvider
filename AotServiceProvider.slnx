@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AotServiceProvider.SourceGenerator/AotServiceProvider.SourceGenerator.csproj" />
+  <Project Path="AotServiceProvider/AotServiceProvider.csproj" />
+</Solution>

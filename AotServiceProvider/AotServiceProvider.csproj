@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>AotServiceProvider</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>cherepets</Authors>
+		<Description>Automatically discover and register services at compile time.</Description>
+		<PackageTags>aot;compile-time;source-generator;service-provider;dependency-injection</PackageTags>
+		<PackageProjectUrl>https://github.com/cherepets/AotServiceProvider</PackageProjectUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/cherepets/AotServiceProvider</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Remove="assets\icon.png" />
+		<ProjectReference Include="..\AotServiceProvider.SourceGenerator\AotServiceProvider.SourceGenerator.csproj" ReferenceOutputAssembly="false" PrivateAssets="all" />
+		<None Include="..\AotServiceProvider.SourceGenerator\bin\$(Configuration)\netstandard2.0\AotServiceProvider.SourceGenerator.dll" Pack="true" PackagePath="analyzers\dotnet\cs\" Visible="false" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" Link="README.md" />
+		<None Include="..\LICENSE" Pack="true" PackagePath="\" Link="LICENSE" />
+		<None Include="assets\icon.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+</Project>
